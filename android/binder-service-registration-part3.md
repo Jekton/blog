@@ -94,7 +94,7 @@ static bool binder_available_for_proc_work_ilocked(struct binder_thread *thread)
 `binder_thread_read` 调用 `binder_available_for_proc_work_ilocked` 判断是否接收 `binder_proc` 的 work。返回 `true` 的条件是：
 1. `!thread->transaction_stack` 当前线程没有在等待其他服务的返回数据。当我们通过 binder 向其他进程写入数据，`thread->transaction_stack` 便会被赋值。这时候，我们只能继续等待自己的数据，而不能去处理其他任务。
 2. `thread->todo` 为空。如果队列不为空，需要先处理自己的工作。
-3. 调用线程是 binder 的 looper 线程。service manager 在注册为 context manager 的时候，就被标记为 looper 线程。（注意这里的 looper 不是 Android 应用开发中我们常见的那个 `Looper`）。
+3. 调用线程是 binder 的 looper 线程。service manager 在注册为 context manager 的时候，就被标记为 looper 线程。（注意这里的 looper 不是 Android 应用开发中我们常见的那个 `Looper`）。
 
 由于此时调用进程是 service manager 的主线程，第一次进入这里的时候，`wait_for_proc_work` 应该为 `true`。
 
