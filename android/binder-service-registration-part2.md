@@ -367,6 +367,10 @@ static void binder_transaction(struct binder_proc *proc,
     t->buffer = binder_alloc_new_buf(&target_proc->alloc, tr->data_size,
           tr->offsets_size, extra_buffers_size,
           !reply && (t->flags & TF_ONE_WAY));
+    t->buffer->allow_user_free = 0;
+    t->buffer->debug_id = t->debug_id;
+    t->buffer->transaction = t;
+    t->buffer->target_node = target_node;
 
     off_start = (binder_size_t *)(t->buffer->data +
           ALIGN(tr->data_size, sizeof(void *)));

@@ -6,4 +6,6 @@
 
 [3. binder 情景分析 - service 的注册（中篇）](./binder-service-registration-part2.md)
 
-[4. binder 情景分析 - RemoteListenerCallback 为什么可以正常工作？](./why-RemoteListenerCallback-works.md)
+[4. binder 情景分析 - service 的注册（下篇）](./binder-service-registration-part3.md)
+
+[5. binder 情景分析 - RemoteListenerCallback 为什么可以正常工作？](./why-RemoteListenerCallback-works.md)
