@@ -1,6 +1,6 @@
 ### 目录
 
-[1. binder 情景分析 - service manager (context manager) 的注册](./startup-of-service-manager.md)
+[1. binder 情景分析 - service manager (context manager) 的启动](./startup-of-service-manager.md)
 
 [2. binder 情景分析 - service 的注册（上篇）](./binder-service-registration-part1.md)
 
