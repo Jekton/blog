@@ -36,7 +36,7 @@ if (tr.target.ptr) {
 问题在于，当 `BBinder` 的强、弱应用计数都为 0 的时候，无论是 `BBinder` 还是 `mRefs`，都会被释放，这样一来，`IPCThreadState` 就会 segment fault 了。所以，binder 驱动肯定背着我们偷偷做了什么处理。那么，他又是如何处理的呢？
 
 
-本篇先讲解 `RefBase/sp/wp`，了解过的朋友可以阅读 [下篇]。
+本篇先讲解 `RefBase/sp/wp`，了解过的朋友可以阅读 [下篇](./binder-why-BBinder-not-released-after-registered-part2.md)。
 
 > 注：源码使用 oreo-release 分支。为了可读性，在不影响结果的情况下，部分代码有删改。
 
