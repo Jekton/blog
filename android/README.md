@@ -3,6 +3,14 @@
 >
 > 如果有哪里出错或者写得不是很清楚的地方，请一定发邮件 ljtong64 AT gmail.com 或提交 issue 告诉我。
 
+### 目标读者
+
+1. 了解过 framework，但没有仔细看过代码的人
+2. 对系统没有了解，但愿意花时间看代码
+3. 能够读懂 C/C++，Java 就更不必说了
+
+如果你是 C/C++ 恐惧症患者，部分文章可能不适合你。如果你对操作系统不熟悉，部分涉及内核的文章可能你理解起来会比较吃力。
+
 ### 目录
 
 [1. binder 情景分析 - service manager (context manager) 的启动](./binder/startup-of-service-manager.md)
