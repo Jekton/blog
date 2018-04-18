@@ -1,3 +1,8 @@
+
+> 注：system, frameworks 源码使用 oreo-release 分支；kernel 使用 kernel/common，分支为 android-4.9-o-release
+>
+> 如果有哪里出错或者写得不是很清楚的地方，请一定发邮件 ljtong64 AT gmail.com 或提交 issue 告诉我。
+
 ### 目录
 
 [1. binder 情景分析 - service manager (context manager) 的启动](./binder/startup-of-service-manager.md)
