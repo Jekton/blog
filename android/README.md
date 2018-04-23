@@ -13,18 +13,20 @@
 
 ### 目录
 
-[1. binder 情景分析 - service manager (context manager) 的启动](./binder/startup-of-service-manager.md)
+[1.1 - binder 情景分析 - service manager (context manager) 的启动](./binder/startup-of-service-manager.md)
 
-[2. binder 情景分析 - service 的注册（上篇）](./binder/binder-service-registration-part1.md)
+[1.2 - binder 情景分析 - service 的注册（上篇）](./binder/binder-service-registration-part1.md)
 
-[3. binder 情景分析 - service 的注册（中篇）](./binder/binder-service-registration-part2.md)
+[1.3 - binder 情景分析 - service 的注册（中篇）](./binder/binder-service-registration-part2.md)
 
-[4. binder 情景分析 - service 的注册（下篇）](./binder/binder-service-registration-part3.md)
+[1.4 - binder 情景分析 - service 的注册（下篇）](./binder/binder-service-registration-part3.md)
 
-[5. binder 情景分析 - 为什么注册后的 BBinder 不会被意外释放？（上）—— 理解 RefBase、sp、wp](./binder/binder-why-BBinder-not-released-after-registered-part1.md)
+[1.5 - binder 情景分析 - 为什么注册后的 BBinder 不会被意外释放？（上）—— 理解 RefBase、sp、wp](./binder/binder-why-BBinder-not-released-after-registered-part1.md)
 
-[6. binder 情景分析 - 为什么注册后的 BBinder 不会被意外释放？（下）—— binder 生命周期管理机制概述](./binder/binder-why-BBinder-not-released-after-registered-part2.md)
+[1.6 - binder 情景分析 - 为什么注册后的 BBinder 不会被意外释放？（下）—— binder 生命周期管理机制概述](./binder/binder-why-BBinder-not-released-after-registered-part2.md)
 
-[7. binder 情景分析 —— service 查询](./binder/service-query.md)
+[1.7 - binder 情景分析 —— service 查询](./binder/service-query.md)
 
-[8. binder 情景分析 - RemoteListenerCallback 为什么可以正常工作？](./binder/why-RemoteListenerCallback-works.md)
+[1.8 - binder 情景分析 - RemoteListenerCallback 为什么可以正常工作？](./binder/why-RemoteListenerCallback-works.md)
+
+[2.1 - 理解 Handler 框架](./handler/understand-handler-framework.md)
