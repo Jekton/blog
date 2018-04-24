@@ -302,6 +302,5 @@ public static void loop() {
 
 Handler 框架到这里，基本就讲清楚了。如果你还有什么不明白的地方，最好自己对照着源码看一遍。如果看过几遍源码还不理解，可以发邮件跟我一起讨论。
 
-关于 `mAsynchronous`，我们在下一篇分析 `MessageQueue` 时再看。
 
 <br><br>

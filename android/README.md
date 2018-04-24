@@ -30,3 +30,5 @@
 [1.8 - binder 情景分析 - RemoteListenerCallback 为什么可以正常工作？](./binder/why-RemoteListenerCallback-works.md)
 
 [2.1 - 理解 Handler 框架](./handler/understand-handler-framework.md)
+
+[2.2 - Handler 框架 —— MessageQueue 实现详解](./handler/uncover-the-messagequeue.md)
