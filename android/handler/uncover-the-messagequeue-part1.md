@@ -1,5 +1,7 @@
 
-### `MessageQueue` 实现详解
+### MessageQueue 实现详解（上）—— Java 世界中的 Message
+
+从 Android 2.3 开始，Java、native 层都可以把 Message 放到 Looper 线程处理，但是这两个世界的 Message 是完全不相关的。在本篇，我们先了解 Java 世界的 Message 是如何入队、出队的。
 
 #### `MessageQueue` 的构造
 
@@ -112,7 +114,7 @@ void Looper::rebuildEpollLocked() {
 `epoll_create, epoll_ctl` 也是 Linux 特有的系统调用，不熟悉 Epoll 的同学，可以参考 Robert Love 的《Linux System Programming》。
 `epoll_create` 创建了一个 Epoll 实例，随后通过 `epoll_ctl` 把我们感兴趣的文件描述符添加进去。这里我们添加的是前面生成的 `mWakeEventFd`。
 
-`mRequests` 现在是空的，可以不理会这部分。
+`mRequests` 主要在C++世界使用，我们暂时不理会这部分。
 
 
 到这里，`MessageQueue` 的初始化就完成了。前面我们说，`Looper.prepare()` 后，就可以调用 `Looper.loop()` 开始事件循环。而在 `loop()` 会，会不断从 `MessageQueue` 中取出 `Message`：
@@ -191,7 +193,7 @@ int Looper::pollOnce(int timeoutMillis, int* outFd, int* outEvents, void** outDa
     }
 }
 ```
-和前面一样，对于 `MessageQueue` 来说，我们不用关心 `mResponses`。
+和前面一样，对于Java世界的人来说，我们暂时不关心 `mResponses`。
 
 下面看看 `pollInner`（`pollInner()` 里许多 `MessageQueue` 没有使用到的代码都被我删除了）。
 ```C++
@@ -507,3 +509,4 @@ void Looper::wake() {
 
 解决的办法跟 `MessageQueue` 的实现一样。大部分情况下，为了移植性（还有维护性，比较 `eventfd` 还是不怎么常见），我们会创建一个 `pipe`，并且让 `poll` 在 pipe 的读端等待。当我们需要唤醒 IO 线程时，就往管道里写一个数据，`poll` 就会因为管道可读而返回了。这里管道起的作用，跟 `Looper`<sup>C++</sup> 的 `mWakeEventFd` 是一样的。
 
+<br><br>
