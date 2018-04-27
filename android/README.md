@@ -32,3 +32,5 @@
 [2.1 - 理解 Handler 框架](./handler/understand-handler-framework.md)
 
 [2.2 - Handler 框架 —— MessageQueue 实现详解（上）—— Java 世界中的 Message](./handler/uncover-the-messagequeue-part1.md)
+
+[2.3 - Handler 框架 —— MessageQueue 实现详解（下）—— C++ 世界对 Message 的支持](./handler/uncover-the-messagequeue-part2.md)
