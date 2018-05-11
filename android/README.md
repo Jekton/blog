@@ -14,6 +14,8 @@
 
 ### 目录
 
+[0.1 - 如何使用 Visual Studio Code 阅读 Android 源码](./how-to-read-android-source-code.md)
+
 [1.1 - binder 情景分析 - service manager (context manager) 的启动](./binder/startup-of-service-manager.md)
 
 [1.2 - binder 情景分析 - service 的注册（上篇）](./binder/binder-service-registration-part1.md)
