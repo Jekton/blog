@@ -39,3 +39,5 @@
 [2.3 - Handler 框架 —— MessageQueue 实现详解（下）—— C++ 世界对 Message 的支持](./handler/uncover-the-messagequeue-part2.md)
 
 [3.1 - Android log 机制 —— logd 总览](./log/logd-overview.md)
+
+[3.2 - Android log 机制 —— logd 如何接收 log 数据（上）](./log/logd-writing-part1.md)
