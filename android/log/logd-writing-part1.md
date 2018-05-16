@@ -230,8 +230,9 @@ void LogBuffer::init() {
     }
 
     LogTimeEntry::unlock();
+}
 ```
-上面我们提到，`mTimes` 现在还只是一个空的 `list`，后面遇到了，我们再回过头来看它。
+每一个需要读取 log 数据的客户端都对应 `mTimes` 里面的一个元素。就像注释里说的，收到信号 `SIGHUP` 会调用 `init`，这个时候需要重新唤醒 `LogTimeEntry`。如果是刚刚初始化 `LogBuffer`，`mTimes` 为空，循环不执行。`SIGHUP` 在 `main` 函数中注册，这一部分就不展开讲了，后面有机会再聊。
 
 到这里，`LogBuffer` 就的初始化就完成了。
 
