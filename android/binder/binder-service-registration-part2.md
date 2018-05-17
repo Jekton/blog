@@ -142,7 +142,7 @@ status_t IPCThreadState::writeTransactionData(int32_t cmd, uint32_t binderFlags,
 几个值得注意的地方：
 1. `cmd` 为 `BC_TRANSACTION`。
 2. `tr.data.ptr.buffer` 指向实际的普通数据
-3. `tr.data.ptr.offsets` 指向 objects。也就是前面我们通过 `writeObject(flat, false)` 写入的 `flat_binder_object`。
+3. `tr.data.ptr.offsets` 指向 objects 的偏移数组。也就是前面我们通过 `writeObject(flat, false)` 写入的 `flat_binder_object`。
 4. `mOut` 同样是一个 `Parcel`，我们将 `cmd` 和所构造的 `binder_transaction_data` 放在了这个 `mOut` 里面。比较容易令人迷惑的是，虽然函数名叫 `writeTransactionData`，实际上只是把数据写入了 `mOut` 里（还没有写入 binder 驱动）。
 
 写入数据后如下图所示：
@@ -389,7 +389,7 @@ static void binder_transaction(struct binder_proc *proc,
 1. 分配了两个对象 `binder_transaction` 和 `binder_work`。`binder_work` 后面我们就会看到它的作用，这里先忽略。
 2. 调用 `binder_alloc_new_buf` 分配了一块缓存。这里分配的缓存是 context manager 的调用 `mmap` 时候所创建的。
 3. 拷贝 `Parcel` 的数据
-4. 拷贝 `Parcel` 的对象
+4. 拷贝 `Parcel` 的对象的偏移数组
 
 我们知道，内核的页和用户空间的页同时执行 `mmap` 所分配的缓存。所以这里虽然是拷贝到了内核，context manager 也能够直接读取这里拷贝的到 `Parcel` 的数据。也就是说，从一个进程到另一个进程，数据只拷贝了一次。这就是 binder 高效的原因。
 
