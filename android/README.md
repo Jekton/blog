@@ -43,3 +43,5 @@
 [3.2 - Android log 机制 —— logd 如何接收 log 数据（上）](./log/logd-writing-part1.md)
 
 [3.3 - Android log 机制 —— logd 如何接收 log 数据（下）](./log/logd-writing-part2.md)
+
+[3.4 - Android log 机制 —— 删除过多的 log](./log/logd-prune.md)
