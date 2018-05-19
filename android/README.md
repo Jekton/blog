@@ -1,4 +1,6 @@
 
+> 本仓库不再更新，所有博文均已转移至[新的博客](https://jekton.github.io/)
+
 > 注：system, frameworks 源码使用 oreo-release 分支；kernel 使用 kernel/common，分支为 android-4.9-o-release
 >
 > 如果有哪里出错或者写得不是很清楚的地方，请一定发邮件 ljtong64 AT gmail.com 或提交 issue 告诉我。
